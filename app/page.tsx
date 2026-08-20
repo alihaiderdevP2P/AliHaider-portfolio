@@ -12,12 +12,16 @@ import ProjectModal, {
   type ProjectDetail,
 } from "@/components/ProjectModal";
 import { useLanguage } from "@/components/LanguageProvider";
+import CopyEmail from "@/components/CopyEmail";
 import { useIsMobile } from "@/lib/useIsMobile";
 import { SKILLS_FLAT } from "@/lib/skills";
 import type { Lang } from "@/lib/i18n";
 
-const GITHUB = "https://github.com/Tanseerhussain/";
-const LINKEDIN = "https://www.linkedin.com/in/tanseer-hussain-618a57247/";
+const GITHUB = "https://github.com/AliHaiderRoy";
+const LINKEDIN = "https://www.linkedin.com/in/ali-haider-1496a4413/";
+const EMAIL = "alihaider.devpro@gmail.com";
+const CV_HREF = "/AliHaider_CV-cloud-use.pdf";
+const PROFILE = "/ali.png";
 
 // Localised content lives in `{ es, en }` objects inside these arrays so the
 // page can be a straightforward array.map() at render time. Tech names stay
@@ -26,12 +30,113 @@ type Localised = { es: string; en: string };
 
 type Project = ProjectDetail & {
   align: "left" | "right";
-  section: "project1" | "project2" | "project3";
+  section: "project1" | "project2" | "project3" | "project4" | "project5";
 };
 
 const projects: Project[] = [
   {
     num: "01",
+    name: {
+      es: "FundFlow — Plataforma de crowdfunding descentralizado",
+      en: "FundFlow — Decentralized Crowdfunding Platform",
+    },
+    stack: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "NestJS",
+      "Solidity",
+      "Ethereum",
+      "Hardhat",
+      "Supabase",
+    ],
+    desc: {
+      es: "Plataforma de crowdfunding full stack on-chain: campañas, fondeo, retiros y reembolsos con contratos Ethereum y MetaMask.",
+      en: "A full-stack decentralized crowdfunding platform for campaigns, funding, withdrawals, and refunds with Ethereum contracts and MetaMask.",
+    },
+    details: {
+      es: "Desarrollé FundFlow con Next.js, React, TypeScript, NestJS, PostgreSQL/Supabase, Solidity, Hardhat y Socket.IO. Integré contratos inteligentes y MetaMask para fondeo, retiros, reembolsos y transacciones on-chain. Gemini AI para generar campañas, analizarlas, detectar fraude y dar soporte. JWT, RBAC, actualizaciones en tiempo real, recompensas, dashboards y APIs REST, con frontend y backend separados.",
+      en: "Built FundFlow with Next.js, React, TypeScript, NestJS, PostgreSQL/Supabase, Solidity, Hardhat, and Socket.IO. Integrated Ethereum smart contracts and MetaMask for campaign funding, withdrawals, refunds, and on-chain transactions. Google Gemini AI for campaign generation, analysis, fraud detection, recommendations, and support. JWT auth, RBAC, real-time updates, rewards, dashboards, and REST APIs across separate frontend and backend architectures.",
+    },
+    github: "https://github.com/AliHaiderRoy/funddefi",
+    highlights: ["nextdotjs", "nestjs", "solidity", "ethereum"],
+    align: "left",
+    section: "project1",
+  },
+  {
+    num: "02",
+    name: {
+      es: "HMS — Sistema de gestión de hostales",
+      en: "HMS — Hostel Management System",
+    },
+    stack: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "NestJS",
+      "MongoDB",
+    ],
+    desc: {
+      es: "Sistema integral para operaciones de hostal: estudiantes, habitaciones, cuotas y flujos administrativos, con cuatro roles.",
+      en: "A comprehensive hostel system for student records, room allocation, fees, and admin workflows, with four user roles.",
+    },
+    details: {
+      es: "Web moderna y responsiva con Next.js, React, Tailwind CSS y shadcn/ui, backend NestJS y MongoDB. Dashboards y control de acceso para Super Admin, Admin, Warden y Student. Módulos de hostal, estudiantes, habitaciones, asistencia, cuotas y quejas. Autenticación, autorización, APIs REST y permisos por rol para proteger datos sensibles, con una arquitectura pensada para coordinar administradores, wardens y estudiantes.",
+      en: "A modern, responsive web app with Next.js, React, Tailwind CSS, and shadcn/ui, and a scalable NestJS + MongoDB backend. Role-based dashboards and access control for Super Admin, Admin, Warden, and Student. Dedicated modules for hostel management, students, room allocation, attendance, fees, and complaints. Secure authentication, authorization, REST APIs, and role-based permissions to protect hostel and student data, with architecture for coordination between administrators, wardens, and students.",
+    },
+    highlights: ["nextdotjs", "react", "nestjs", "mongodb"],
+    align: "right",
+    section: "project2",
+  },
+  {
+    num: "03",
+    name: {
+      es: "Adiba Accessories Hub",
+      en: "Adiba Accessories Hub",
+    },
+    stack: ["Shopify", "Payments", "SEO"],
+    desc: {
+      es: "E-commerce en Shopify de accesorios para ordenador y móvil, con una interfaz moderna, pagos seguros y diseño mobile-first.",
+      en: "A Shopify ecommerce platform for computer and mobile accessories with a modern interface, secure payments, and mobile-friendly design.",
+    },
+    details: {
+      es: "Desarrollé la tienda en Shopify con pasarelas de pago seguras, herramientas de gestión de productos e integración de soporte al cliente. El diseño mobile-friendly y la optimización SEO aumentaron la visibilidad online.",
+      en: "Developed a Shopify-based store with secure payment gateways, product management tools, and customer-support integration. Mobile-friendly design and SEO optimisation increased online visibility.",
+    },
+    highlights: ["javascript", "nodedotjs", "git", "docker"],
+    align: "left",
+    section: "project3",
+  },
+  {
+    num: "04",
+    name: {
+      es: "GB FoodHub — Pedidos y gestión de restaurantes",
+      en: "GB FoodHub — Food Ordering & Restaurant Management Platform",
+    },
+    stack: [
+      "Flutter",
+      "Next.js",
+      "React",
+      "Supabase",
+      "Riverpod",
+      "Firebase",
+    ],
+    desc: {
+      es: "Ecosistema de pedidos para Gilgit-Baltistan: app Flutter, dashboard Next.js y backend Supabase en producción.",
+      en: "A production-ready food ordering ecosystem for Gilgit-Baltistan: Flutter customer app, Next.js dashboard, and Supabase backend.",
+    },
+    details: {
+      es: "App de cliente con Flutter, Riverpod, GoRouter, Supabase, FCM y almacenamiento seguro de tokens: descubrimiento, menú, carrito, checkout, seguimiento, favoritos, reseñas y perfil. Dashboard Next.js 15 / React 19 para dueños, staff, admins y cajeros: menús, pedidos en vivo, analítica, ingresos, ajustes y POS. PostgreSQL con RLS, auth, storage, Realtime y Edge Functions. RBAC para clientes, dueños, staff, cajeros, admins y super admins. Pedidos en tiempo real desde la app y el POS. Pagos COD, tarjeta, Stripe, JazzCash y EasyPaisa, más notificaciones, reseñas e imágenes.",
+      en: "Customer app with Flutter, Riverpod, GoRouter, Supabase, Firebase Cloud Messaging, and secure token storage — restaurant discovery, browsing, cart, checkout, order tracking, favorites, reviews, and profile. Next.js 15 / React 19 dashboard for owners, staff, admins, and cashiers: menus, live orders, analytics, revenue, settings, administration, and POS billing. Supabase PostgreSQL with RLS, authentication, storage, Realtime, and Edge Functions. RBAC for customers, restaurant owners, staff, cashiers, admins, and super admins. Real-time orders from the mobile app and POS. Payments: Cash on Delivery, card, Stripe, JazzCash, and EasyPaisa, plus notifications, reviews, image storage, and Edge Functions for payments, analytics, and email.",
+    },
+    github: "https://github.com/AliHaiderRoy/gb-food-hub",
+    highlights: ["flutter", "nextdotjs", "react", "postgresql"],
+    align: "right",
+    section: "project4",
+  },
+  {
+    num: "05",
     name: {
       es: "GBK Tour App",
       en: "GBK Tour App",
@@ -45,69 +150,16 @@ const projects: Project[] = [
       "Maps",
     ],
     desc: {
-      es: "Plataforma turística completa que muestra provincias, distritos, lugares de interés y hoteles cercanos en Gilgit-Baltistan y Azad Kashmir.",
+      es: "Plataforma turística de Gilgit-Baltistan y Azad Kashmir: provincias, distritos, destinos y hoteles cercanos.",
       en: "A complete tourism platform showcasing provinces, districts, tourist spots, and nearby hotels across Gilgit-Baltistan and Azad Kashmir.",
     },
     details: {
-      es: "Diseñé y desarrollé una plataforma de turismo de extremo a extremo con diseño responsivo, mapas interactivos y una base de datos optimizada. Trabajé con el equipo de UI/UX para mejorar la usabilidad y el rendimiento, logrando una experiencia de carga un 40 % más rápida.",
-      en: "Designed and developed an end-to-end tourism platform with responsive design, interactive maps, and an optimised database. Collaborated with the UI/UX team to improve usability and app performance, resulting in a 40% faster loading experience.",
+      es: "Diseñé y desarrollé la plataforma de turismo de extremo a extremo. Integré diseño responsivo, mapas interactivos y una base de datos optimizada. Colaboré con el equipo de UI/UX para mejorar usabilidad y rendimiento, con una carga un 40 % más rápida.",
+      en: "Designed and developed a complete tourism platform with responsive design, interactive maps, and optimised database structures. Collaborated with the UI/UX team to improve usability and app performance, resulting in a 40% faster loading experience.",
     },
     highlights: ["nextdotjs", "react", "tailwindcss", "postgresql"],
     align: "left",
-    section: "project1",
-  },
-  {
-    num: "02",
-    name: {
-      es: "HMS — Hostel Management System",
-      en: "HMS — Hostel Management System",
-    },
-    stack: [
-      "Next.js",
-      "React",
-      "Tailwind CSS",
-      "shadcn/ui",
-      "NestJS",
-      "MongoDB",
-    ],
-    desc: {
-      es: "Sistema integral para operaciones de hostales: registros de estudiantes, asignación de habitaciones, cuotas y flujos administrativos.",
-      en: "A comprehensive system to streamline hostel operations, student records, room allocation, fee management, and admin workflows.",
-    },
-    details: {
-      es: "Aplicación web moderna y responsiva con Next.js, React, Tailwind CSS y shadcn/ui, y un backend escalable en NestJS + MongoDB. Dashboards y control de acceso para Super Admin, Admin, Warden y Student. Módulos de gestión de hostal, estudiantes, habitaciones, asistencia, cuotas y quejas, con autenticación segura, APIs REST y permisos por rol para proteger datos sensibles.",
-      en: "A modern, responsive web app built with Next.js, React, Tailwind CSS, and shadcn/ui, with a scalable NestJS + MongoDB backend. Role-based dashboards and access control for Super Admin, Admin, Warden, and Student. Dedicated modules for hostel management, students, room allocation, attendance, fees, and complaints, with secure authentication, REST APIs, and role-based permissions to protect sensitive data.",
-    },
-    github: "https://github.com/Tanseerhussain/H-M-S",
-    highlights: ["nextdotjs", "react", "nestjs", "mongodb"],
-    align: "right",
-    section: "project2",
-  },
-  {
-    num: "03",
-    name: {
-      es: "Adiba Accessories Hub",
-      en: "Adiba Accessories Hub",
-    },
-    stack: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Node.js",
-      "Tailwind CSS",
-      "Payments",
-    ],
-    desc: {
-      es: "E-commerce de accesorios para ordenador y móvil, con una interfaz elegante, pasarelas de pago y un diseño pensado para móvil y SEO.",
-      en: "An ecommerce platform for computer and mobile accessories with an elegant interface, secure payments, and mobile-first SEO.",
-    },
-    details: {
-      es: "Desarrollé una tienda online de accesorios con gestión de productos, pasarelas de pago seguras e integración de soporte al cliente. El diseño mobile-friendly y la optimización SEO aumentaron la visibilidad online de la marca.",
-      en: "Developed an accessories storefront with product management tools, secure payment gateways, and customer-support integration. Mobile-friendly design and SEO optimisation increased the brand's online visibility.",
-    },
-    highlights: ["nextdotjs", "react", "nodedotjs", "tailwindcss"],
-    align: "left",
-    section: "project3",
+    section: "project5",
   },
 ];
 
@@ -122,62 +174,48 @@ const experiences: Array<{
 }> = [
   {
     role: { es: "Full Stack Developer", en: "Full Stack Developer" },
-    company: "APPRIC (SMC-PRIVATE) LIMITED",
-    period: { es: "Mar 2022 — Presente", en: "Mar 2022 — Present" },
+    company: "APPRIC (SMC-Private) Limited",
+    period: { es: "Mar 2026 — Presente", en: "Mar 2026 — Present" },
     location: { es: "Gilgit, Pakistán", en: "Gilgit, Pakistan" },
     summary: {
-      es: "Lidero un equipo de desarrolladores, diseñadores y estrategas centrado en soluciones web y móviles a medida. Me encargo del desarrollo full stack, la supervisión de proyectos, la coordinación con clientes y de que cada experiencia digital salga con calidad.",
-      en: "Lead a team of developers, designers, and strategists focused on custom web and mobile app solutions. Responsible for full stack development, project supervision, client coordination, and delivering high-quality digital experiences.",
+      es: "Full Stack y Lead Developer en APPRIC Software House. Especializado en aplicaciones web, móviles y blockchain: Next.js, React, TypeScript, Node.js, NestJS, Flutter, PostgreSQL, MongoDB, Supabase, Ethereum y Solidity. APIs REST, sistemas por rol, tiempo real, e-commerce y dApps, con arquitectura, clientes y software listo para producción.",
+      en: "Full Stack and Lead Developer at APPRIC Software House, specializing in modern web, mobile, and blockchain apps. Next.js, React, TypeScript, Node.js, NestJS, Flutter, PostgreSQL, MongoDB, and Supabase. Strong in REST APIs, role-based systems, real-time apps, eCommerce, and decentralized apps with Ethereum and Solidity. Team leadership, client communication, system architecture, and production-ready software.",
     },
     bullets: [
       {
-        es: "GBK Tour App — plataforma turística con mapas interactivos y un 40 % más de velocidad de carga.",
-        en: "GBK Tour App — tourism platform with interactive maps and a 40% faster loading experience.",
+        es: "Desarrollo y mantengo aplicaciones web, móviles y blockchain con tecnologías y frameworks actuales.",
+        en: "Develop and maintain modern web, mobile, and blockchain applications using current technologies and frameworks.",
       },
       {
-        es: "HMS — sistema de hostales con 4 roles, dashboards y APIs REST seguras (NestJS + MongoDB).",
-        en: "HMS — hostel system with 4 user roles, dashboards, and secure REST APIs (NestJS + MongoDB).",
+        es: "Llevo el desarrollo full stack: frontend, backend, bases de datos, APIs, autenticación y despliegue.",
+        en: "Handle full-stack development, including frontend, backend, databases, APIs, authentication, and deployment.",
       },
       {
-        es: "Adiba Accessories Hub — e-commerce con pagos, gestión de productos y SEO.",
-        en: "Adiba Accessories Hub — ecommerce with payments, product management, and SEO.",
+        es: "Colaboro con developers, diseñadores y clientes para entender requisitos y entregar soluciones escalables.",
+        en: "Collaborate with developers, designers, and clients to understand requirements and deliver scalable digital solutions.",
+      },
+      {
+        es: "Participo en planificación, desarrollo, testing, despliegue y mantenimiento continuo.",
+        en: "Participate in project planning, development, testing, deployment, and ongoing maintenance.",
+      },
+      {
+        es: "Aseguro que las aplicaciones sean seguras, responsivas, usables y optimizadas en rendimiento.",
+        en: "Ensure applications are secure, responsive, user-friendly, and optimized for performance.",
       },
     ],
     stack: [
       "Next.js",
       "React",
       "TypeScript",
-      "NestJS",
       "Node.js",
-      "MongoDB",
+      "NestJS",
+      "Flutter",
+      "Solidity",
+      "Ethereum",
       "PostgreSQL",
-      "Tailwind CSS",
+      "MongoDB",
+      "Supabase",
     ],
-  },
-  {
-    role: { es: "Full Stack Developer", en: "Full Stack Developer" },
-    company: "VCKONECT Software House",
-    period: { es: "Nov 2023 — May 2024", en: "Nov 2023 — May 2024" },
-    location: { es: "Islamabad, Pakistán", en: "Islamabad, Pakistan" },
-    summary: {
-      es: "Contribuí al diseño, desarrollo y despliegue de soluciones web y móviles modernas, colaborando con equipos transversales para entregar software usable, seguro y escalable.",
-      en: "Contributed to the design, development, and deployment of modern web and mobile solutions, collaborating with cross-functional teams to deliver user-friendly, secure, and scalable software.",
-    },
-    bullets: [
-      {
-        es: "Desarrollé sitios y aplicaciones de negocio con frameworks modernos.",
-        en: "Developed responsive websites and business applications using modern frameworks.",
-      },
-      {
-        es: "Mejoré el backend y la base de datos, reduciendo los tiempos de carga hasta un 35 %.",
-        en: "Improved backend performance and database efficiency, reducing load times by up to 35%.",
-      },
-      {
-        es: "Apoyé mejoras de UI/UX y participé en planificación, testing y despliegue.",
-        en: "Assisted in UI/UX enhancements and took part in planning, testing, and deployment.",
-      },
-    ],
-    stack: ["Next.js", "React", "Node.js", "TypeScript", "PostgreSQL"],
   },
 ];
 
@@ -192,36 +230,36 @@ const education: Array<{
       es: "BSCS — Grado en Ciencias de la Computación",
       en: "BSCS — Bachelor of Science in Computer Science",
     },
-    place: "MIU (Mohi-ud-din Islamic University)",
-    period: { es: "2020 — 2024", en: "2020 — 2024" },
-    detail: { es: "CGPA: 3.42", en: "CGPA: 3.42" },
+    place: "KIU (Karakoram International University)",
+    period: { es: "2022 — 2026", en: "2022 — 2026" },
+    detail: { es: "CGPA: 3.00", en: "CGPA: 3.00" },
   },
   {
     title: { es: "Intermediate", en: "Intermediate" },
-    place: "Cambridge International Science College",
-    period: { es: "2018 — 2020", en: "2018 — 2020" },
+    place: "Al-Mustafa Public School and Degree College, Gilgit",
+    period: { es: "2020 — 2022", en: "2020 — 2022" },
     detail: { es: "Nota: A", en: "Grade: A" },
   },
   {
     title: { es: "Matriculación", en: "Matriculation" },
-    place: "Askari Cadet College, Kaller Kahar",
-    period: { es: "2016 — 2018", en: "2016 — 2018" },
-    detail: { es: "Nota: A", en: "Grade: A" },
+    place: "Al-Mustafa Public School and Degree College, Gilgit",
+    period: { es: "2018 — 2020", en: "2018 — 2020" },
+    detail: { es: "Nota: B", en: "Grade: B" },
   },
 ];
 
 const certifications: Localised[] = [
   {
-    es: "IT Trainer — Oxford Education Institute (2025)",
-    en: "IT Trainer — Oxford Education Institute (2025)",
+    es: "Frontend Development — UConnect (2022). Interfaces responsivas y usables para servicios de cliente.",
+    en: "Frontend Development — UConnect (2022). Developed responsive and user-friendly interfaces to support client services.",
   },
   {
-    es: "NextGen IT Mentor — Euro Kidz International School System (2024)",
-    en: "NextGen IT Mentor — Euro Kidz International School System (2024)",
+    es: "Blockchain Technology — NUST University (2023). Conceptos de blockchain, sistemas descentralizados y Web3.",
+    en: "Blockchain Technology — NUST University (2023). Blockchain concepts, decentralized systems, and emerging Web3 technologies.",
   },
   {
-    es: "Customer Experience (CX) — HP Foundation (2023)",
-    en: "Customer Experience (CX) — HP Foundation (2023)",
+    es: "Backend Development — UFusion (2024). Sistemas backend para servicios de cliente y funcionalidad de aplicaciones.",
+    en: "Backend Development — UFusion (2024). Developed and managed backend systems to support client services and application functionality.",
   },
 ];
 
@@ -294,18 +332,18 @@ export default function Home() {
         <header className="fixed top-0 inset-x-0 z-50 px-6 sm:px-10 md:px-14 py-5 flex items-center justify-between pointer-events-none">
           <div className="flex items-center gap-3 pointer-events-auto">
             <Image
-              src="/profile.png"
-              alt="Tanseer Hussain"
-              width={32}
-              height={32}
-              className="rounded-full object-cover ring-1 ring-ice-400/40"
+              src={PROFILE}
+              alt="Ali Haider"
+              width={40}
+              height={40}
+              className="rounded-full object-cover object-top ring-1 ring-ice-400/50"
               priority
             />
             <span
               data-cursor="hover"
               className="text-sm font-semibold tracking-tight text-ice-100 whitespace-nowrap"
             >
-              Tanseer Hussain
+              Ali Haider
             </span>
             {/* Wrapper (not the pill itself) carries the hide: .status-pill
                 hard-sets display:inline-flex, which beats Tailwind's .hidden
@@ -353,11 +391,11 @@ export default function Home() {
                 style={{ ["--d" as string]: "0ms" }}
               >
                 <Image
-                  src="/profile.png"
-                  alt="Tanseer Hussain"
-                  width={96}
-                  height={96}
-                  className="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover ring-2 ring-ice-400/35 shadow-[0_8px_40px_-12px_rgba(0,0,0,0.65)]"
+                  src={PROFILE}
+                  alt="Ali Haider, Full Stack and Blockchain Developer"
+                  width={160}
+                  height={160}
+                  className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full object-cover object-top ring-2 ring-ice-100/40 shadow-[0_8px_40px_-12px_rgba(0,0,0,0.65)]"
                   priority
                 />
               </div>
@@ -368,9 +406,9 @@ export default function Home() {
                 {t("hero.greeting")}
               </p>
               <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[8.5rem] font-bold tracking-[-0.03em] text-ice-50 leading-[0.92]">
-                <HeroWord text="Tanseer" delay={120} />
+                <HeroWord text="Ali" delay={120} />
                 <br />
-                <HeroWord text="Hussain" delay={260} className="text-ice-400" />
+                <HeroWord text="Haider" delay={260} className="text-ice-400" />
               </h1>
               <p
                 className="mt-8 text-base sm:text-lg md:text-xl text-ice-200 max-w-xl leading-relaxed fade-in-up"
@@ -387,7 +425,7 @@ export default function Home() {
                 style={{ ["--d" as string]: "700ms" }}
               >
                 <a
-                  href="/cv.pdf"
+                  href={CV_HREF}
                   target="_blank"
                   rel="noopener noreferrer"
                   data-cursor="hover"
@@ -416,6 +454,12 @@ export default function Home() {
                   {t("hero.hire")}
                 </button>
                 <div className="basis-full h-0 md:hidden" aria-hidden />
+                <CopyEmail email={EMAIL} className="frost-icon">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+                    <path d="M4 6h16v12H4z" />
+                    <path d="M4 7l8 6 8-6" />
+                  </svg>
+                </CopyEmail>
                 <a
                   href={LINKEDIN}
                   target="_blank"
@@ -619,7 +663,7 @@ export default function Home() {
             <div className="relative z-10 max-w-3xl mx-auto space-y-6">
               {education.map((ed, idx) => (
                 <Reveal
-                  key={ed.place}
+                  key={`${ed.place}-${ed.period.en}`}
                   delay={idx * 80}
                   as="article"
                   className="relative rounded-2xl bg-ink-1/75 backdrop-blur-md border border-ink-3 p-6 sm:p-8 pointer-events-auto shadow-[0_8px_40px_-20px_rgba(0,0,0,0.6)]"
@@ -827,7 +871,7 @@ export default function Home() {
               <Reveal delay={240}>
                 <div className="flex flex-wrap gap-3 pointer-events-auto">
                   <a
-                    href="/cv.pdf"
+                    href={CV_HREF}
                     target="_blank"
                     rel="noopener noreferrer"
                     data-cursor="hover"
@@ -839,6 +883,9 @@ export default function Home() {
                     </svg>
                     {t("hero.cv")}
                   </a>
+                  <CopyEmail email={EMAIL} className="frost-btn">
+                    {t("contact.copyEmail")}
+                  </CopyEmail>
                   <a
                     href={GITHUB}
                     target="_blank"
