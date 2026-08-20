@@ -68,7 +68,7 @@ export default function SectionNav() {
   return (
     <nav
       aria-label={t("nav.aria")}
-      className="hidden md:flex fixed right-6 top-1/2 -translate-y-1/2 z-40 flex-col gap-3 pointer-events-auto"
+      className="hidden md:flex fixed right-6 top-1/2 -translate-y-1/2 z-40 flex-col items-center gap-3.5 pointer-events-auto"
     >
       {SECTIONS.map((s) => {
         const isActive = active === s.id;
@@ -78,15 +78,15 @@ export default function SectionNav() {
             type="button"
             onClick={() => goTo(s.id)}
             data-cursor="hover"
-            className="group relative flex items-center gap-3"
+            className="group relative flex h-3 w-3 shrink-0 items-center justify-center"
             aria-label={s.label}
             aria-current={isActive ? "true" : undefined}
           >
             <span
-              className={`text-[10px] uppercase tracking-[0.25em] text-ice-200 transition-all duration-300 ${
+              className={`pointer-events-none absolute right-[calc(100%+0.75rem)] whitespace-nowrap text-[10px] uppercase tracking-[0.25em] text-ice-200 transition-all duration-300 ${
                 isActive
-                  ? "opacity-100 -translate-x-1"
-                  : "opacity-0 translate-x-2 group-hover:opacity-80 group-hover:translate-x-0"
+                  ? "opacity-100 translate-x-0"
+                  : "opacity-0 translate-x-1 group-hover:opacity-80 group-hover:translate-x-0"
               }`}
             >
               {s.label}
@@ -94,8 +94,8 @@ export default function SectionNav() {
             <span
               className={`block rounded-full transition-all duration-300 ${
                 isActive
-                  ? "w-2.5 h-2.5 bg-ice-100 shadow-[0_0_12px_rgba(234,242,251,0.6)]"
-                  : "w-1.5 h-1.5 bg-ice-500/60 group-hover:bg-ice-200"
+                  ? "h-2.5 w-2.5 bg-ice-100 shadow-[0_0_12px_rgba(234,242,251,0.6)]"
+                  : "h-1.5 w-1.5 bg-ice-500/60 group-hover:bg-ice-200"
               }`}
             />
           </button>
