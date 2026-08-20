@@ -27,6 +27,11 @@ export const metadata: Metadata = {
   description:
     "Portfolio of Ali Haider — Full Stack and Blockchain Developer in Gilgit, Pakistan. Next.js, React, TypeScript, NestJS, Flutter, Solidity, and production web, mobile, and Web3 apps.",
   authors: [{ name: "Ali Haider" }],
+  icons: {
+    icon: [{ url: "/ali.png", type: "image/png" }],
+    apple: [{ url: "/ali.png", type: "image/png" }],
+    shortcut: "/ali.png",
+  },
   openGraph: {
     title: "Ali Haider — Full Stack & Blockchain Developer",
     description:
