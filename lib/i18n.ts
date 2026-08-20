@@ -44,12 +44,12 @@ export const DICT = {
   hero: {
     greeting: { es: "Hola, soy", en: "Hi, I am" },
     roleLine: {
-      es: "Full Stack Developer.",
-      en: "Full Stack Developer.",
+      es: "Full Stack Developer · Blockchain Developer.",
+      en: "Full Stack Developer · Blockchain Developer.",
     },
     tagline: {
-      es: "Construyo sitios modernos, responsivos y escalables con Next.js, React y Node.js.",
-      en: "Building modern, responsive, and scalable websites with Next.js, React, and Node.js.",
+      es: "Full Stack y Lead Developer en APPRIC. Construyo soluciones web, móviles y blockchain con Next.js, Flutter, NestJS, Ethereum y Solidity.",
+      en: "Full Stack and Lead Developer at APPRIC. Building scalable web, mobile, and blockchain apps with Next.js, Flutter, NestJS, Ethereum, and Solidity.",
     },
     cv: { es: "Descargar CV", en: "Download CV" },
     hire: { es: "Contactarme", en: "Contact me" },
@@ -100,8 +100,8 @@ export const DICT = {
     kicker: { es: "contacto", en: "contact" },
     title: { es: "¿Hablamos?", en: "Let's talk?" },
     body: {
-      es: "Estoy en Gilgit, Pakistán, y disponible para contratar en Upwork. Si lo que has visto te interesa, el teclado ya está listo para el primer mensaje.",
-      en: "Based in Gilgit, Pakistan, and available for hire on Upwork. If what you've seen interests you, the keyboard is ready for the first message.",
+      es: "Estoy en Gilgit, Pakistán. Abierto a trabajo full stack, móvil y blockchain. Si lo que has visto te interesa, el teclado ya está listo para el primer mensaje.",
+      en: "Based in Gilgit, Pakistan. Open to full-stack, mobile, and blockchain work. If what you've seen interests you, the keyboard is ready for the first message.",
     },
     copyEmail: { es: "Copiar email", en: "Copy email" },
     openMail: { es: "Abrir mail", en: "Open mailto" },
@@ -110,8 +110,8 @@ export const DICT = {
     upwork: { es: "Upwork", en: "Upwork" },
     emailToast: { es: "Email copiado", en: "Email copied" },
     footer: {
-      es: "© 2026 Tanseer Hussain. Todos los derechos reservados.",
-      en: "© 2026 Tanseer Hussain. All rights reserved.",
+      es: "© 2026 Ali Haider. Todos los derechos reservados.",
+      en: "© 2026 Ali Haider. All rights reserved.",
     },
   },
   keyboard: {
@@ -152,9 +152,17 @@ export const DICT = {
         es: "Estructura para backends que tienen que crecer.",
         en: "Structure for backends that need to grow.",
       },
-      php: {
-        es: "Mueve más web de la que crees.",
-        en: "Runs more of the web than you think.",
+      flutter: {
+        es: "Un código, iOS y Android.",
+        en: "One codebase, iOS and Android.",
+      },
+      solidity: {
+        es: "Contratos inteligentes en Ethereum.",
+        en: "Smart contracts on Ethereum.",
+      },
+      ethereum: {
+        es: "La red donde viven las dApps.",
+        en: "The network dApps live on.",
       },
       postgresql: {
         es: "La base de datos aburrida que siempre funciona.",
@@ -163,10 +171,6 @@ export const DICT = {
       mongodb: {
         es: "Documentos cuando el esquema necesita aire.",
         en: "Documents when the schema wants to breathe.",
-      },
-      mysql: {
-        es: "El relacional que sigue empujando internet.",
-        en: "The relational workhorse of the web.",
       },
       docker: {
         es: "Igual en mi máquina, igual en producción.",

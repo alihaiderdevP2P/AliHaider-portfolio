@@ -26,10 +26,9 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
-  // Emits a minimal server bundle at `.next/standalone/` so the Docker
-  // runtime image can drop npm/node_modules entirely and just run
-  // `node server.js`. Trims the final image to ~100 MB.
-  output: "standalone",
+  // Standalone is for Docker/self-host. Vercel sets VERCEL=1 and uses its own
+  // output tracing — forcing standalone there breaks (or slows) deploys.
+  ...(!process.env.VERCEL ? { output: "standalone" as const } : {}),
 
   async headers() {
     return [

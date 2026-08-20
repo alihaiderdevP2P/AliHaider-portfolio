@@ -23,22 +23,23 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Tanseer Hussain — Full Stack Developer",
+  title: "Ali Haider — Full Stack & Blockchain Developer",
   description:
-    "Portfolio of Tanseer Hussain — Full Stack Developer in Gilgit, Pakistan. Next.js, React, TypeScript, Node.js, NestJS, and immersive 3D web experiences.",
-  authors: [{ name: "Tanseer Hussain" }],
+    "Portfolio of Ali Haider — Full Stack and Blockchain Developer in Gilgit, Pakistan. Next.js, React, TypeScript, NestJS, Flutter, Solidity, and production web, mobile, and Web3 apps.",
+  authors: [{ name: "Ali Haider" }],
   openGraph: {
-    title: "Tanseer Hussain — Full Stack Developer",
+    title: "Ali Haider — Full Stack & Blockchain Developer",
     description:
-      "Full Stack Developer building modern, responsive, and scalable web apps. Next.js, React, Node.js, NestJS.",
+      "Full Stack and Blockchain Developer building web, mobile, and decentralized apps. Next.js, Flutter, NestJS, Solidity.",
     type: "website",
     locale: "en_US",
+    images: [{ url: "/ali.png", alt: "Ali Haider" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tanseer Hussain — Full Stack Developer",
+    title: "Ali Haider — Full Stack & Blockchain Developer",
     description:
-      "Full Stack Developer building modern, responsive, and scalable web apps. Next.js, React, Node.js, NestJS.",
+      "Full Stack and Blockchain Developer building web, mobile, and decentralized apps. Next.js, Flutter, NestJS, Solidity.",
   },
 };
 
