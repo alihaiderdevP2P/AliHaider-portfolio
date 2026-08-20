@@ -30,6 +30,17 @@ const nextConfig: NextConfig = {
   // output tracing — forcing standalone there breaks (or slows) deploys.
   ...(!process.env.VERCEL ? { output: "standalone" as const } : {}),
 
+  transpilePackages: ["@react-three/drei", "three", "three-stdlib"],
+
+  webpack: (config, { webpack: wp }) => {
+    // Webpack on this Windows setup treats some native ESM deps as binary.
+    // The keyboard does not use BVH; ignore it so drei's barrel cannot pull it.
+    config.plugins.push(
+      new wp.IgnorePlugin({ resourceRegExp: /three-mesh-bvh/ })
+    );
+    return config;
+  },
+
   async headers() {
     return [
       {

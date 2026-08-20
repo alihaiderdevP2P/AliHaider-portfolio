@@ -1,12 +1,10 @@
 "use client";
 
 import { Canvas, useFrame } from "@react-three/fiber";
-import {
-  Environment,
-  Lightformer,
-  Text,
-  Text3D,
-} from "@react-three/drei";
+import { Environment } from "@react-three/drei/core/Environment.js";
+import { Lightformer } from "@react-three/drei/core/Lightformer.js";
+import { Text } from "@react-three/drei/core/Text.js";
+import { Text3D } from "@react-three/drei/core/Text3D.js";
 import {
   Suspense,
   useCallback,
